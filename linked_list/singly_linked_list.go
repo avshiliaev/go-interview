@@ -1,4 +1,4 @@
-package data_structures
+package linked_list
 
 /**
  * Your MyLinkedList object will be instantiated and called as such:

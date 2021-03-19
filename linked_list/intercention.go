@@ -1,4 +1,4 @@
-package data_structures
+package linked_list
 
 // What to return if no intersection?
 // Are there really no cycles?

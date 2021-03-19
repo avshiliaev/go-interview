@@ -1,4 +1,4 @@
-package data_structures
+package linked_list
 
 func isPalindrome(head *ListNode) bool {
 	nums := make([]int, 0, 64)

@@ -1,4 +1,4 @@
-package data_structures
+package linked_list
 
 // Remove the (L - n + 1) th node from the beginning in the list.
 func removeNthFromEnd(head *ListNode, n int) *ListNode {

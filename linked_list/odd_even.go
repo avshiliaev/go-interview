@@ -1,4 +1,4 @@
-package data_structures
+package linked_list
 
 // The first node is considered odd, and the second node is even, and so on.
 func oddEvenList(head *ListNode) *ListNode {

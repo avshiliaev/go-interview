@@ -1,4 +1,4 @@
-package data_structures
+package linked_list
 
 
 // TWO POINTERS
