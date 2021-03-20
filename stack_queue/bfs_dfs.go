@@ -50,7 +50,7 @@ func (t *Tree) BFS() <-chan int {
 				if queue.IsEmpty() {
 					break
 				}
-				n := queue.DeQueue().(*TNode)
+				n := queue.DeQueue()
 				ch <- n.value
 				if n.left != nil {
 					queue.EnQueue(n.left)
@@ -90,7 +90,7 @@ func (t *Tree) DFS() <-chan int {
 				if stack.IsEmpty() {
 					break
 				}
-				n := stack.Pop().(*TNode)
+				n := stack.Pop()
 				ch <- n.value
 				if n.right != nil {
 					stack.Push(n.right)

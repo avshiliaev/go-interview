@@ -2,47 +2,46 @@ package stack_queue
 
 // CircularQueue
 type Queue struct {
-	queue []int
+	queue []TNode
 }
 
 // Constructor initialize your data structure here. Set the size of the queue to be k.
 func QueueConstructor() Queue {
 	return Queue{
-		queue: make([]int, 0),
+		queue: make([]TNode, 0),
 	}
 }
 
 // EnQueue insert an element into the circular queue. Return true if the operation is successful.
-func (m *Queue) EnQueue(value int) bool {
-	m.queue = append(m.queue, value)
+func (m *Queue) EnQueue(node *TNode) bool {
+	m.queue = append(m.queue, *node)
 	return true
 }
 
 // DeQueue delete an element from the circular queue. Return true if the operation is successful.
-func (m *Queue) DeQueue() bool {
+func (m *Queue) DeQueue() *TNode {
 	if len(m.queue) == 0 {
-		return false
+		return nil
 	}
-
+	node := m.queue[0]
 	m.queue = m.queue[1:]
-	return true
+	return &node
 }
 
 // Front get the front item from the queue.
-func (m *Queue) Front() int {
+func (m *Queue) Front() *TNode {
 	if len(m.queue) == 0 {
-		return -1
+		return nil
 	}
-
-	return m.queue[0]
+	return &m.queue[0]
 }
 
 // Rear get the last item from the queue. */
-func (m *Queue) Rear() int {
+func (m *Queue) Rear() *TNode {
 	if len(m.queue) == 0 {
-		return -1
+		return nil
 	}
-	return m.queue[len(m.queue)-1]
+	return &m.queue[len(m.queue)-1]
 }
 
 // IsEmpty checks whether the circular queue is empty or not. */
