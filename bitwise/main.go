@@ -1,6 +1,28 @@
 package bitwise
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+)
+
+/*
+	Built-in operators
+	0011 & 0101   =	0001		Bitwise AND
+	0011 | 0101   =	0111		Bitwise OR
+	0011 ^ 0101   =	0110		Bitwise XOR
+	^0101	      = 1010		Bitwise NOT (same as 1111 ^ 0101)
+	0011 &^ 0101  =	0010		Bitclear (AND NOT)
+	00110101<<2	  =	11010100	Left shift
+	00110101<<100 =	00000000	No upper limit on shift count
+	00110101>>2	  =	00001101	Right shift
+
+	1. The binary numbers in the examples are for explanation only. Integer literals in Go must be specified in octal,
+		decimal or hexadecimal.
+	2. The bitwise operators take both signed and unsigned integers as input. The right-hand side of a shift operator,
+		however, must be an unsigned integer.
+	3. Shift operators implement arithmetic shifts if the left operand is a signed integer and logical shifts if it is
+		an unsigned integer.
+*/
 
 // Examples https://yourbasic.org/golang/bitwise-operator-cheat-sheet/
 func Examples() {
@@ -58,10 +80,39 @@ func ToggleSwitchNTimes() {
 	x := 0
 	cycles := 10
 
-	for i:=0; i<=cycles; i++ {
+	for i := 0; i <= cycles; i++ {
 		x ^= 1
 		fmt.Println(x)
 	}
 
-	fmt.Println("Switch is: ", x&1==1)
+	fmt.Println("Switch is: ", x&1 == 1)
+}
+
+func BitVectorMask() {
+	x := 1
+	mask := 1
+	cycles := 10
+
+	for i := 0; i <= cycles; i++ {
+		j := rand.Intn(10-1) + 1
+		if j < 5 {
+			fmt.Println("shift x by 1")
+			x <<= 1
+		}
+	}
+
+	for i := 0; i <= 1; i++ {
+		fmt.Println("shift mask by 1")
+		mask <<= 1
+	}
+
+	fmt.Printf("%d == %08b\n", x, x)
+	fmt.Printf("%d == %08b\n", mask, mask)
+
+	if x&mask == 0 {
+		fmt.Println("Switch is OFF")
+	} else {
+		fmt.Println("Switch is ON")
+	}
+
 }

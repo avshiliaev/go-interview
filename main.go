@@ -14,5 +14,5 @@ func main() {
 
 	fmt.Println("-----------------")
 
-	bitwise.ToggleSwitchNTimes()
+	bitwise.BitVectorMask()
 }
