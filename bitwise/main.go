@@ -76,6 +76,17 @@ func Examples() {
 	fmt.Printf("Line 5 - Value of c is %d\n", c)
 }
 
+func CheckParity() {
+	for x := 0; x < 100; x++ {
+		num := rand.Int()
+		if num&1 == 1 {
+			fmt.Printf("%d is odd\n", num)
+		} else {
+			fmt.Printf("%d is even\n", num)
+		}
+	}
+}
+
 func ToggleSwitchNTimes() {
 	x := 0
 	cycles := 10
@@ -89,18 +100,18 @@ func ToggleSwitchNTimes() {
 }
 
 func BitVectorMask() {
-	x := 1
-	mask := 1
-	cycles := 10
 
+	x := 1
+	cycles := 10
 	for i := 0; i <= cycles; i++ {
-		j := rand.Intn(10-1) + 1
+		j := rand.Intn(10)
 		if j < 5 {
 			fmt.Println("shift x by 1")
 			x <<= 1
 		}
 	}
 
+	mask := 1
 	for i := 0; i <= 1; i++ {
 		fmt.Println("shift mask by 1")
 		mask <<= 1
