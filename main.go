@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/avshiliaev/interview/approaches/bitwise"
+	bitwise2 "github.com/avshiliaev/interview/golang_built_in/bitwise"
 	"runtime"
 )
 
@@ -14,5 +14,5 @@ func main() {
 
 	fmt.Println("-----------------")
 
-	bitwise.BitVectorMask()
+	bitwise2.BitVectorMask()
 }
