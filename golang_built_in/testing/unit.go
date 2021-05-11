@@ -1,4 +1,4 @@
-package test
+package testing
 
 func mySum(xi ...int) int {
 	sum := 0

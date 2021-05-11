@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/avshiliaev/interview/bitwise"
+	"github.com/avshiliaev/interview/approaches/bitwise"
 	"runtime"
 )
 

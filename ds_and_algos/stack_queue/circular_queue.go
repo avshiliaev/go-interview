@@ -1,6 +1,5 @@
 package stack_queue
 
-// CircularQueue
 type CircularQueue struct {
 	queue []int
 	k     int

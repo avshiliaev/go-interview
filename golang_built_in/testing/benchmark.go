@@ -1,4 +1,4 @@
-package test
+package testing
 
 func recursive(n int) int {
 	if n == 0 {

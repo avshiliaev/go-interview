@@ -1,4 +1,4 @@
-package golang_built_in
+package pointers
 
 import "fmt"
 
