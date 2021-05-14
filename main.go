@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	bitwise2 "github.com/avshiliaev/interview/golang_built_in/bitwise"
+	bitwise2 "github.com/avshiliaev/interview/go_standard_lib/bitwise"
 	"runtime"
 )
 
