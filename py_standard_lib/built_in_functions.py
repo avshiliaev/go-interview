@@ -45,7 +45,7 @@ class BuiltInFunctions:
         li = [0, 2, 2]
         a = all(li)
         print(a)
-        # output = 7.25
+        # output = False
 
         # The any() function returns True if any item in an iterable is true, else it returns False.
         tup = (0, 1, False)
