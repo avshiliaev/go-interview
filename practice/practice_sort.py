@@ -1,4 +1,4 @@
-class Solution:
+class MergeSort:
     """
     https://youtu.be/KF2j-9iSf4Q
     """
@@ -38,7 +38,41 @@ class Solution:
         return result
 
 
+class QuickSort:
+    """
+    https://youtu.be/SLauY6PpjW4
+    https://stackoverflow.com/a/27461889/10202443
+    """
+
+    def sort(self, arr_):
+        return self._quick_sort(arr_, 0, len(arr_) - 1)
+
+    def _quick_sort(self, arr_, left, right):
+
+        # Base case for recursion:
+        if left >= right:
+            return
+
+        pivot = self._partition(arr_, left, right)
+        self._quick_sort(arr_, left, pivot - 1)
+        self._quick_sort(arr_, pivot + 1, right)
+
+    @staticmethod
+    def _partition(arr_, left, right):
+        pivot = left
+        for i in range(left + 1, right + 1):
+            if arr_[i] <= arr_[left]:
+                pivot += 1
+                arr_[i], arr_[pivot] = arr_[pivot], arr_[i]
+        arr_[pivot], arr_[left] = arr_[left], arr_[pivot]
+        return pivot
+
+
 if __name__ == '__main__':
     array = [4, 5, 1, 7, 4, 9, 2, 3, 1, 0, -1, 8, 6, -4]
-    new_array = Solution().sort(array)
+    new_array = MergeSort().sort(array)
     print(new_array)
+
+    array = [4, 5, 1, 7, 4, 9, 2, 3, 1, 0, -1, 8, 6, -4]
+    QuickSort().sort(array)
+    print(array)
