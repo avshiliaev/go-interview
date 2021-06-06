@@ -1,3 +1,8 @@
+class BubbleSort:
+    def sort(self, arr):
+        return arr
+
+
 class MergeSort:
     """
     https://youtu.be/KF2j-9iSf4Q
@@ -76,3 +81,7 @@ if __name__ == '__main__':
     array = [4, 5, 1, 7, 4, 9, 2, 3, 1, 0, -1, 8, 6, -4]
     QuickSort().sort(array)
     print(array)
+
+    array = [4, 5, 1, 7, 4, 9, 2, 3, 1, 0, -1, 8, 6, -4]
+    new_array = BubbleSort().sort(array)
+    print(new_array)
