@@ -13,13 +13,20 @@ def range_diff(r1, r2):
     return result
 
 
-def multirange_diff(r1_list, r2_list):
-    for r2 in r2_list:
-        r1_list = list(itertools.chain(*[range_diff(r1, r2) for r1 in r1_list]))
-    return r1_list
+def multi_range_diff(train_from_to, excluded):
+    for from_to in excluded:
+        train_from_to = list(itertools.chain(*[range_diff(date, from_to) for date in train_from_to]))
+    return train_from_to
+
+
+def multi_range_diff_simplified(train_from_to, excluded):
+    for from_to in excluded:
+        intervals = [range_diff(date, from_to) for date in train_from_to]
+        train_from_to = [item for sublist in intervals for item in sublist]
+    return train_from_to
 
 
 if __name__ == '__main__':
-    r1_list = [(1, 10)]
-    r2_list = [(3, 4), (6, 8)]
-    print(multirange_diff(r1_list, r2_list))
+    training_start_end = [(10, 100)]
+    excluded_intervals = [(30, 40), (60, 80)]
+    print(multi_range_diff_simplified(training_start_end, excluded_intervals))
